@@ -57,9 +57,9 @@ export default function BlogPost() {
           <div className="posts posts--2">
             {more.map(m => (
               <article key={m.slug} className="post">
-                <Link to={`/blog/${m.slug}`} className="post__img arch-clip"><Img name={m.cover} alt="" sizes="(max-width: 900px) 90vw, 40vw" /></Link>
+                <Link viewTransition to={`/blog/${m.slug}`} className="post__img arch-clip"><Img name={m.cover} alt="" sizes="(max-width: 900px) 90vw, 40vw" /></Link>
                 <p className="post__meta">{m.category}</p>
-                <h3 className="post__title"><Link to={`/blog/${m.slug}`}>{m.title}</Link></h3>
+                <h3 className="post__title"><Link viewTransition to={`/blog/${m.slug}`}>{m.title}</Link></h3>
               </article>
             ))}
           </div>

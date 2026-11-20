@@ -103,6 +103,44 @@ a.h2-ribbon__item--gold:hover { background: var(--gold-700); }
   .h2__end-l p { font-size: 28px; }
 }
 @media (max-width: 760px) and (max-height: 700px) { .h2__sub { display: none; } }
+/* ---- Calmer hero (v2.1): video + name, nothing else competing ---- */
+.h2__frame { inset: 104px 32px 32px; border-color: rgba(235,200,107,.32); outline-color: rgba(235,200,107,.12); }
+.h2-corner { width: 52px; height: 52px; opacity: 0; }
+.h2__title { filter: drop-shadow(0 4px 24px rgba(24,10,10,.75)) drop-shadow(0 1px 2px rgba(24,10,10,.5)); }
+.h2__shade { background:
+  radial-gradient(ellipse 62% 40% at 50% 50%, rgba(24,10,10,.5), rgba(24,10,10,0) 72%),
+  linear-gradient(180deg, rgba(24,10,10,.55) 0%, rgba(24,10,10,0) 22%, rgba(24,10,10,0) 70%, rgba(24,10,10,.55) 100%); }
+.h2__copy { translate: 0 -50%; }
+.h2__eyebrow { margin-bottom: clamp(18px, 3vh, 30px); font-size: 11px; letter-spacing: .42em; color: rgba(235,200,107,.9); }
+/* Gold gradient is clipped to each letter's box: extend the box so descenders (j, y)
+   and the italic overhang are painted, then cancel the extra space with negative margins. */
+.h2__ch { padding: .06em .08em .26em .02em; margin: -.06em -.08em -.26em -.02em; }
+
+/* Fits on one line with margin at any width/height (the line is ~7.6× the font size wide) */
+.h2__title { font-size: clamp(48px, min(9.4vw, 15vh), 132px); max-width: 100%; }
+.h2__copy { padding: 0 clamp(48px, 7vw, 120px); }
+.h2__ctas { margin-top: 34px; }
+.h2__explore { position: relative; padding: 6px 0; font: 500 11px/1 var(--f-eyebrow); letter-spacing: .32em; text-transform: uppercase; color: var(--ivory-50); }
+.h2__explore::after { content: ""; position: absolute; left: 0; right: 0; bottom: -4px; height: 1px; background: var(--gold-300); transform: scaleX(.35); transition: transform .7s var(--ease); }
+.h2__explore:hover::after, .h2__explore:focus-visible::after { transform: scaleX(1); }
+.h2__shot { left: 64px; bottom: 58px; gap: 14px; letter-spacing: .2em; color: rgba(251,247,239,.7); }
+.h2__shot .h2__pause { position: static; width: 28px; height: 28px; font-size: 8px; opacity: 1; animation: none; border-color: rgba(235,200,107,.35); }
+.h2 .h2__film { right: 64px; bottom: 52px; }
+.h2 .h2__film .film-btn__ring { width: 40px; height: 40px; }
+@media (max-width: 1180px) {
+  .h2__frame { inset: 84px 16px 70px; }
+  .h2__shot { left: 36px; bottom: 90px; }
+  .h2 .h2__film { right: 36px; bottom: 84px; }
+}
+@media (max-width: 760px) {
+  .h2__frame { inset: 80px 12px 66px; }
+  .h2__shot { left: 26px; bottom: 82px; }
+  .h2__shotname { display: none; }
+  .h2 .h2__film { right: 26px; bottom: 82px; }
+  .h2 .h2__film .film-btn__ring { width: 28px; height: 28px; }
+  .h2__title { font-size: clamp(54px, 16vw, 80px); }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .h2__ch, .h2__crest, .h2__eyebrow, .h2__sub, .h2__ctas, .h2-ribbon, .h2-corner, .h2__rail, .h2__shot, .h2__pause { animation: none !important; opacity: 1 !important; transform: none !important; filter: none !important; }
   .h2__frame { animation: none; clip-path: none; }

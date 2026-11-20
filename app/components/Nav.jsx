@@ -44,6 +44,11 @@ function UtilityBar() {
   const [now, setNow] = useState('')
   useEffect(() => { setNow(istClock()); const id = setInterval(() => setNow(istClock()), 30_000); return () => clearInterval(id) }, [])
   const c = data ? condition(data.current.weather_code) : null
+  const [season, setSeason] = useState('')
+  useEffect(() => {
+    const m = Number(new Date().toLocaleString('en-US', { month: 'numeric', timeZone: 'Asia/Kolkata' }))
+    setSeason(m >= 10 || m <= 3 ? 'Peak season · Oct – Mar' : m <= 6 ? 'Summer · Pool season' : 'Monsoon · Green Aravallis')
+  }, [])
   return (
     <div className="util">
       <span className="util__l">
@@ -54,8 +59,9 @@ function UtilityBar() {
         <Lotus size={11} /> Travellers' Choice 2026 · 4.8 on Tripadvisor
       </a>
       <span className="util__r">
+        {season && <span className="util__season">{season}</span>}
         <a href={`tel:${SITE.phones.reservations.tel}`}>{SITE.phones.reservations.label}</a>
-        <Link to="/contact">Contact</Link>
+        <Link viewTransition to="/contact">Contact</Link>
       </span>
     </div>
   )
@@ -63,7 +69,7 @@ function UtilityBar() {
 
 function Brand({ onClick }) {
   return (
-    <Link to="/" className="brand" aria-label={`${SITE.name}, home`} onClick={onClick}>
+    <Link viewTransition to="/" className="brand" aria-label={`${SITE.name}, home`} onClick={onClick}>
       <img src="/crest-mark.png" alt="" width="44" height="39" className="brand__crest" />
       <span className="brand__text">
         <span className="brand__name">The Vijayran Palace</span>
@@ -82,11 +88,11 @@ function Mega({ id, open, onClose }) {
           <p className="eyebrow eyebrow--light">{m.label} · <span lang="hi">{m.hi}</span></p>
           <p className="mega__title">{m.intro.title}</p>
           <p className="mega__text">{m.intro.text}</p>
-          <Link to={m.to} className="link-u link-u--light" onClick={onClose} tabIndex={open ? 0 : -1}>{m.intro.cta} →</Link>
+          <Link viewTransition to={m.to} className="link-u link-u--light" onClick={onClose} tabIndex={open ? 0 : -1}>{m.intro.cta} →</Link>
         </div>
         <div className={`mega__cards mega__cards--${m.cards.length}`}>
           {m.cards.map((c, i) => (
-            <Link key={c.to + c.title} to={c.to} className="mcard" onClick={onClose} tabIndex={open ? 0 : -1} style={{ '--i': i }}>
+            <Link viewTransition key={c.to + c.title} to={c.to} className="mcard" onClick={onClose} tabIndex={open ? 0 : -1} style={{ '--i': i }}>
               <span className="mcard__img arch-clip"><Img name={c.img} alt="" sizes="200px" /></span>
               <span className="mcard__title">{c.title}</span>
               <span className="mcard__meta">{c.meta}</span>
@@ -141,7 +147,7 @@ export default function Nav() {
   return (
     <>
       <header className={`nav ${scrolled || mega ? 'is-solid' : ''} ${hidden && !mega ? 'is-hidden' : ''}`} onMouseLeave={leave}>
-        <UtilityBar />
+        {pathname !== '/' && <UtilityBar />}
         <div className="nav__bar">
           <button className="nav__burger" onClick={() => setDrawer(true)} aria-label="Open menu" aria-expanded={drawer}>
             <span /><span /><span />
@@ -157,7 +163,7 @@ export default function Nav() {
                   aria-controls={`mega-${id}`}
                   onFocus={() => openMega(id)}
                 >
-                  <span className="nav__en">{MENUS[id].label}<i className="nav__caret" aria-hidden="true" /></span>
+                  <span className="nav__en-wrap"><span className="nav__clip"><span className="nav__en">{MENUS[id].label}</span></span><i className="nav__caret" aria-hidden="true" /></span>
                   <span className="nav__hi" lang="hi" aria-hidden="true">{MENUS[id].hi}</span>
                   <Lotus size={10} className="nav__mark" />
                 </Link>
@@ -169,8 +175,8 @@ export default function Nav() {
 
           <nav className="nav__links nav__links--r" aria-label="More">
             {RIGHT.map(l => (
-              <NavLink key={l.to} to={l.to} className={({ isActive: a }) => `nav__link ${a ? 'is-active' : ''}`} onMouseEnter={() => setMega(null)} onFocus={() => setMega(null)}>
-                <span className="nav__en">{l.label}</span>
+              <NavLink viewTransition key={l.to} to={l.to} className={({ isActive: a }) => `nav__link ${a ? 'is-active' : ''}`} onMouseEnter={() => setMega(null)} onFocus={() => setMega(null)}>
+                <span className="nav__clip"><span className="nav__en">{l.label}</span></span>
                 <span className="nav__hi" lang="hi" aria-hidden="true">{l.hi}</span>
                 <Lotus size={10} className="nav__mark" />
               </NavLink>
@@ -196,26 +202,26 @@ export default function Nav() {
           <button className="drawer__close" onClick={() => setDrawer(false)} aria-label="Close menu">✕</button>
         </div>
         <ul className="drawer__list">
-          {LEFT.map(id => (
+          {LEFT.map((id, k) => (
             <li key={id} className={acc === id ? 'is-open' : ''}>
               <button className="drawer__group" onClick={() => setAcc(acc === id ? null : id)} aria-expanded={acc === id} tabIndex={drawer ? 0 : -1}>
-                {MENUS[id].label}<span lang="hi">{MENUS[id].hi}</span><i aria-hidden="true">+</i>
+                <em className="drawer__num">{String(k + 1).padStart(2, '0')}</em>{MENUS[id].label}<span lang="hi">{MENUS[id].hi}</span><i aria-hidden="true">+</i>
               </button>
               <div className="drawer__sub"><div>
                 <div className="drawer__cards">
                   {MENUS[id].cards.map(c => (
-                    <Link key={c.to + c.title} to={c.to} className="mcard" tabIndex={acc === id ? 0 : -1}>
+                    <Link viewTransition key={c.to + c.title} to={c.to} className="mcard" tabIndex={acc === id ? 0 : -1}>
                       <span className="mcard__img arch-clip"><Img name={c.img} alt="" sizes="40vw" /></span>
                       <span className="mcard__title">{c.title}</span>
                     </Link>
                   ))}
                 </div>
-                <Link to={MENUS[id].to} className="link-u link-u--light" tabIndex={acc === id ? 0 : -1}>{MENUS[id].intro.cta} →</Link>
+                <Link viewTransition to={MENUS[id].to} className="link-u link-u--light" tabIndex={acc === id ? 0 : -1}>{MENUS[id].intro.cta} →</Link>
               </div></div>
             </li>
           ))}
-          {[...RIGHT, { label: 'About', hi: 'परिचय', to: '/about' }, { label: 'Contact', hi: 'पधारो', to: '/contact' }].map(l => (
-            <li key={l.to}><Link to={l.to} className="drawer__group" tabIndex={drawer ? 0 : -1}>{l.label}<span lang="hi">{l.hi}</span></Link></li>
+          {[...RIGHT, { label: 'About', hi: 'परिचय', to: '/about' }, { label: 'Contact', hi: 'पधारो', to: '/contact' }].map((l, k) => (
+            <li key={l.to}><Link viewTransition to={l.to} className="drawer__group" tabIndex={drawer ? 0 : -1}><em className="drawer__num">{String(k + 4).padStart(2, '0')}</em>{l.label}<span lang="hi">{l.hi}</span></Link></li>
           ))}
         </ul>
         <div className="drawer__foot">

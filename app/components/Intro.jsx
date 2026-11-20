@@ -9,8 +9,8 @@ export default function Intro() {
     if (document.documentElement.classList.contains('vp-seen')) { setPhase('done'); return }
     try { sessionStorage.setItem('vp-intro', '1') } catch { /* private mode */ }
     document.documentElement.classList.add('is-locked')
-    const t1 = setTimeout(() => setPhase('out'), 2300)
-    const t2 = setTimeout(() => { setPhase('done'); document.documentElement.classList.remove('is-locked') }, 3200)
+    const t1 = setTimeout(() => setPhase('out'), 1600)
+    const t2 = setTimeout(() => { setPhase('done'); document.documentElement.classList.remove('is-locked') }, 2400)
     return () => { clearTimeout(t1); clearTimeout(t2); document.documentElement.classList.remove('is-locked') }
   }, [])
   if (phase === 'done') return null

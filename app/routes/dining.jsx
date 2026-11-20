@@ -1,4 +1,5 @@
-import { PageHero, SectionHead, Feature, CtaBand } from '../components/UI.jsx'
+import { PageHero, CtaBand } from '../components/UI.jsx'
+import { HoverList } from '../components/Signature.jsx'
 import { reveal } from '../lib/motion.js'
 import { seo, breadcrumbLd, abs } from '../lib/seo.js'
 import { DINING } from '../content/experiences.js'
@@ -25,10 +26,7 @@ export default function Dining() {
         </div>
       </section>
       <section className="sec sec--sand">
-        <SectionHead num={1} eyebrow="Where to dine" title="Five ways to dine like royalty" />
-        <div className="features">
-          {DINING.map((d, i) => <Feature key={d.title} img={d.img} title={d.title} hi={d.hi} flip={i % 2 === 1}><p>{d.text}</p></Feature>)}
-        </div>
+        <HoverList items={DINING} eyebrow="Where to dine" title="Five ways to dine like royalty" />
       </section>
       <CtaBand title="Reserve a table under the stars" text={`Call ${SITE.phones.reservations.label} a day ahead for romantic and private dinners.`} img="dining-5" />
     </>

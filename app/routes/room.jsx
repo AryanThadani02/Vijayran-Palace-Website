@@ -1,5 +1,6 @@
 import { Link, useParams } from 'react-router'
-import { PageHero, SectionHead, RoomCard, Gallery, CtaBand } from '../components/UI.jsx'
+import { PageHero, SectionHead, RoomCard, CtaBand } from '../components/UI.jsx'
+import { Slider } from '../components/Signature.jsx'
 import { Lotus } from '../components/Ornaments.jsx'
 import { reveal } from '../lib/motion.js'
 import { imgUrl } from '../lib/images.jsx'
@@ -63,13 +64,13 @@ export default function Room() {
 
       <section className="sec sec--sand">
         <SectionHead num={1} eyebrow="Gallery" title={`Inside the ${r.name}`} />
-        <Gallery items={r.images.map(n => [n, 'Room', `${r.name}`])} filters={false} />
+        <Slider images={r.images} label={r.name} />
       </section>
 
       <section className="sec sec--ivory">
         <SectionHead num={2} eyebrow="Also at the palace" title="Other stays" />
         <div className="rooms">{others.map((o, i) => <RoomCard key={o.slug} room={o} i={i} />)}</div>
-        <p className="center mt-48"><Link to="/accommodation" className="link-u link-u--gold">All accommodation</Link></p>
+        <p className="center mt-48"><Link viewTransition to="/accommodation" className="link-u link-u--gold">All accommodation</Link></p>
       </section>
       <CtaBand title={`Reserve the ${r.name}`} img={r.images[1] || 'pool-infinity'} />
     </>

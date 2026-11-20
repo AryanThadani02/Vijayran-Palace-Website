@@ -21,7 +21,7 @@ export default function Attractions() {
             <Feature key={a.title} img={a.img} eyebrow={`${a.distance} from the palace`} title={a.title} flip={i % 2 === 1}><p>{a.text}</p></Feature>
           ))}
         </div>
-        <p className="center mt-48">Planning a city day? Read our <Link className="link-u link-u--gold" to="/blog/places-to-visit-in-jaipur">guide to Jaipur</Link></p>
+        <p className="center mt-48">Planning a city day? Read our <Link viewTransition className="link-u link-u--gold" to="/blog/places-to-visit-in-jaipur">guide to Jaipur</Link></p>
       </section>
       <CtaBand title="Return to calm after the city" />
     </>

@@ -31,7 +31,7 @@ export default function Accommodation() {
             <tbody>
               {ROOMS.map(r => (
                 <tr key={r.slug}>
-                  <th scope="row"><Link to={`/accommodation/${r.slug}`}>{r.name}</Link></th>
+                  <th scope="row"><Link viewTransition to={`/accommodation/${r.slug}`}>{r.name}</Link></th>
                   <td>{r.tagline}</td><td>{r.bed}</td><td>{r.size.replace('approx. ', '')}</td>
                   <td><a href={SITE.bookingUrl} target="_blank" rel="noopener" className="link-u link-u--gold">Book</a></td>
                 </tr>

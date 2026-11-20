@@ -31,7 +31,7 @@ export default function DayOuting() {
           <p className="note note--inline">{o.note} Prices subject to change; call to confirm availability.</p>
           <div className="offerx__ctas">
             <a className="btn btn--gold" href={`tel:${SITE.phones.sales.tel}`}><span>Call {SITE.phones.sales.label}</span></a>
-            <Link className="btn btn--ghost btn--dark" to="/offers"><span>All offers</span></Link>
+            <Link viewTransition className="btn btn--ghost btn--dark" to="/offers"><span>All offers</span></Link>
           </div>
         </div>
       </section>

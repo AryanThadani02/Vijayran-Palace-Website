@@ -19,4 +19,7 @@ run(['-i', SRC, '-filter_complex', graphFor(W, H), '-map', '[out]', '-an', '-c:v
 run(['-i', SRC, '-filter_complex', graphFor(960, 540), '-map', '[out]', '-an',
   '-c:v', 'libx264', '-preset', 'slow', '-crf', '28', '-pix_fmt', 'yuv420p', '-movflags', '+faststart', 'public/video/hero-sm.mp4'])
 run(['-ss', String(CUTS[0][0] + 0.6), '-i', SRC, '-frames:v', '1', '-vf', `scale=${W}:${H}:force_original_aspect_ratio=increase,crop=${W}:${H}`, '-q:v', '4', 'public/video/hero-poster.jpg'])
+// Full film for the "Watch the film" lightbox (with sound, opt-in only)
+run(['-i', SRC, '-vf', 'scale=1280:720', '-c:v', 'libx264', '-preset', 'slow', '-crf', '30', '-pix_fmt', 'yuv420p',
+  '-c:a', 'aac', '-b:a', '96k', '-movflags', '+faststart', 'public/video/film.mp4'])
 console.log(`hero loop: ${total.toFixed(1)}s`)

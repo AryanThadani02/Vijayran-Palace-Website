@@ -12,26 +12,27 @@ export default function Footer() {
           <img src="/crest-mark.png" alt="Royal Quest Resorts crest" width="110" height="97" loading="lazy" />
           <p className="footer__padharo"><span lang="hi">पधारो म्हारे देस</span>Welcome to our land.</p>
           <p className="footer__small">{SITE.address.full}</p>
+          <p className="footer__coords">27°01′ N · 75°53′ E</p>
           <p className="footer__small"><a href={SITE.mapsLink} target="_blank" rel="noopener">Get directions →</a></p>
         </div>
         <div>
           <h2 className="footer__h">Stay</h2>
           <ul className="footer__list">
-            {ROOMS.map(r => <li key={r.slug}><Link to={`/accommodation/${r.slug}`}>{r.name}</Link></li>)}
+            {ROOMS.map(r => <li key={r.slug}><Link viewTransition to={`/accommodation/${r.slug}`}>{r.name}</Link></li>)}
           </ul>
         </div>
         <div>
           <h2 className="footer__h">Discover</h2>
           <ul className="footer__list">
-            <li><Link to="/about">Our Story</Link></li>
-            <li><Link to="/experiences/activities">Activities</Link></li>
-            <li><Link to="/experiences/dining">Dining</Link></li>
-            <li><Link to="/experiences/attractions">Around Jaipur</Link></li>
-            <li><Link to="/weddings">Weddings</Link></li>
-            <li><Link to="/day-outing">Day Outing</Link></li>
-            <li><Link to="/offers">Offers</Link></li>
-            <li><Link to="/gallery">Gallery</Link></li>
-            <li><Link to="/blog">Journal</Link></li>
+            <li><Link viewTransition to="/about">Our Story</Link></li>
+            <li><Link viewTransition to="/experiences/activities">Activities</Link></li>
+            <li><Link viewTransition to="/experiences/dining">Dining</Link></li>
+            <li><Link viewTransition to="/experiences/attractions">Around Jaipur</Link></li>
+            <li><Link viewTransition to="/weddings">Weddings</Link></li>
+            <li><Link viewTransition to="/day-outing">Day Outing</Link></li>
+            <li><Link viewTransition to="/offers">Offers</Link></li>
+            <li><Link viewTransition to="/gallery">Gallery</Link></li>
+            <li><Link viewTransition to="/blog">Journal</Link></li>
           </ul>
         </div>
         <div>
@@ -47,7 +48,7 @@ export default function Footer() {
       <Skyline />
       <div className="footer__legal">
         <span>© 2026 The Vijayran Palace by Royal Quest Resorts</span>
-        <span><Link to="/faq">FAQ</Link> · <Link to="/careers">Careers</Link> · <Link to="/terms">Terms &amp; Conditions</Link> · <Link to="/contact">Contact</Link></span>
+        <span><Link viewTransition to="/faq">FAQ</Link> · <Link viewTransition to="/careers">Careers</Link> · <Link viewTransition to="/terms">Terms &amp; Conditions</Link> · <Link viewTransition to="/contact">Contact</Link></span>
       </div>
     </footer>
   )

@@ -2,8 +2,7 @@ import { useCallback, useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router'
 import { archAt } from './Ornaments.jsx'
 import { useScrollProgress, easeOut, reducedMotion } from '../lib/motion.js'
-import { useWeather, condition } from '../lib/weather.js'
-import { SITE } from '../content/site.js'
+import { FilmButton } from './Signature.jsx'
 
 // Shot captions, synced to public/video/hero.mp4 (see scripts/video.mjs for the cut list).
 const SHOTS = [
@@ -23,28 +22,6 @@ function Corner({ className }) {
       <circle cx="18" cy="18" r="3" />
       <path d="M22 22c6 2 10 6 12 12M22 22c2 6 6 10 12 12" opacity=".7" />
     </svg>
-  )
-}
-
-function Ribbon() {
-  const { data } = useWeather()
-  const c = data ? condition(data.current.weather_code) : null
-  return (
-    <div className="h2-ribbon">
-      <a className="h2-ribbon__item h2-ribbon__item--gold" href={SITE.bookingUrl} target="_blank" rel="noopener">
-        <span className="h2-ribbon__k">Book a stay</span><span className="h2-ribbon__v">Best rates, direct</span>
-      </a>
-      <Link className="h2-ribbon__item" to="/weddings">
-        <span className="h2-ribbon__k">Plan a wedding</span><span className="h2-ribbon__v">100 to 1,500 guests</span>
-      </Link>
-      <Link className="h2-ribbon__item" to="/day-outing">
-        <span className="h2-ribbon__k">Day outing</span><span className="h2-ribbon__v">2 PM to 9 PM</span>
-      </Link>
-      <div className="h2-ribbon__item h2-ribbon__item--wx">
-        <span className="h2-ribbon__k">Kukas, Jaipur</span>
-        <span className="h2-ribbon__v">{data ? `${Math.round(data.current.temperature_2m)}°C · ${c.label}` : '19 km from Amer Fort'}</span>
-      </div>
-    </div>
   )
 }
 
@@ -136,20 +113,16 @@ export default function HomeHero() {
             <Corner className="h2-corner--tl" /><Corner className="h2-corner--tr" />
             <Corner className="h2-corner--bl" /><Corner className="h2-corner--br" />
           </div>
-          <p className="h2__rail h2__rail--l" aria-hidden="true">Kukas · Jaipur · Rajasthan</p>
-          <p className="h2__rail h2__rail--r" aria-hidden="true">Est. 2018 · Royal Quest Resorts</p>
           <div className="h2__shot" aria-live="off">
-            <span className="h2__shotnum">{String(shot + 1).padStart(2, '0')} / {String(SHOTS.length).padStart(2, '0')}</span>
+            <button className="h2__pause" onClick={togglePlay} aria-label={paused ? 'Play background video' : 'Pause background video'}>
+              {paused ? '▶' : '❚❚'}
+            </button>
             <span key={shot} className="h2__shotname">{SHOTS[shot][1]}</span>
           </div>
-          <button className="h2__pause" onClick={togglePlay} aria-label={paused ? 'Play background video' : 'Pause background video'}>
-            {paused ? '▶' : '❚❚'}
-          </button>
-          <Ribbon />
+          <div className="h2__film"><FilmButton /></div>
         </div>
 
         <div className="h2__copy" ref={copyRef}>
-          <img className="h2__crest" src="/crest-mark.png" alt="" width="84" height="74" />
           <p className="h2__eyebrow"><span>Heritage Meets Opulence</span></p>
           <h1 className="h2__title">
             {TITLE.map((word, wi) => (
@@ -158,10 +131,8 @@ export default function HomeHero() {
               </span>
             ))}
           </h1>
-          <p className="h2__sub">A Rajput haveli palace in the foothills of the Aravallis, <br className="h2__br" />minutes from Amer, Jaipur.</p>
           <div className="h2__ctas">
-            <Link className="btn btn--gold" to="/accommodation"><span>Explore the Palace</span></Link>
-            <Link className="btn btn--ghost" to="/weddings"><span>Plan a Royal Wedding</span></Link>
+            <Link viewTransition className="h2__explore" to="/accommodation">Explore the palace</Link>
           </div>
         </div>
 
@@ -172,7 +143,7 @@ export default function HomeHero() {
           </div>
           <div className="h2__end-r">
             <p>Carved jharokhas, sandstone courtyards and lawns that turn gold at sunset.</p>
-            <Link to="/about" className="link-u link-u--light" tabIndex={-1}>Our story →</Link>
+            <Link viewTransition to="/about" className="link-u link-u--light" tabIndex={-1}>Our story →</Link>
           </div>
         </div>
       </div>

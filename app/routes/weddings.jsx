@@ -66,14 +66,28 @@ export default function Weddings() {
         <dl className="services" data-reveal ref={reveal}>
           {WEDDING_SERVICES.map(([t, d]) => <div key={t}><dt>{t}</dt><dd>{d}</dd></div>)}
         </dl>
+        <div className="mt-64">
+          <SectionHead eyebrow="How it works" title="From first call to pheras" />
+          <ol className="steps" data-reveal ref={reveal}>
+            {[
+              ['Your first call', 'Share your dates, guest count and vision with our wedding team.'],
+              ['A palace walk-through', 'Visit the seven celebration spaces and see the palace for yourself.'],
+              ['Design & feasts', 'Themes, décor and menus, crafted with our creative team and chefs.'],
+              ['Stays & guests', 'Rooms, villas and transfers for your family and friends.'],
+              ['Your celebration', 'Our team looks after the details, from the first Haldi to the last dance.'],
+            ].map(([t, d], i) => (
+              <li key={t} className="step"><span className="step__n" lang="hi">{['१', '२', '३', '४', '५'][i]}</span><h3>{t}</h3><p>{d}</p></li>
+            ))}
+          </ol>
+        </div>
         <div className="features mt-64">
           <Feature img="prewed-1" eyebrow="Pre-wedding" title="Shoots in jharokhas & painted halls">
             <p>Imagine portraits of a royal queen in a jharokha, with her prince stealing glances beside her.</p>
-            <p><Link className="link-u link-u--gold" to="/weddings/pre-wedding-shoots">Pre-wedding shoots</Link></p>
+            <p><Link viewTransition className="link-u link-u--gold" to="/weddings/pre-wedding-shoots">Pre-wedding shoots</Link></p>
           </Feature>
           <Feature img="banquet" eyebrow="Meetings & events" title="Banquets, offsites & celebrations" flip>
             <p>The air-conditioned Raj Mahal and our courtyards host conferences, birthdays and corporate retreats.</p>
-            <p><Link className="link-u link-u--gold" to="/weddings/meetings-events">Meetings & events</Link></p>
+            <p><Link viewTransition className="link-u link-u--gold" to="/weddings/meetings-events">Meetings & events</Link></p>
           </Feature>
         </div>
       </section>

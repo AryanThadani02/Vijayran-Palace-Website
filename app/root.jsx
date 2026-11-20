@@ -8,6 +8,8 @@ import './styles/tokens.css'
 import './styles/app.css'
 import './styles/pages.css'
 import './styles/hero.css'
+import './styles/signature.css'
+import './styles/refine.css'
 
 export const links = () => [
   { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
@@ -59,7 +61,7 @@ export function ErrorBoundary({ error }) {
     <main className="sec sec--ink notfound">
       <p className="eyebrow eyebrow--light">{notFound ? '404' : 'Something went wrong'}</p>
       <h1 className="shead__title" style={{ color: 'var(--ivory-50)' }}>{notFound ? 'You seem to have wandered off the palace grounds' : 'The palace doors are stuck'}</h1>
-      <p><Link className="btn btn--gold" to="/"><span>Return to the palace</span></Link></p>
+      <p><Link viewTransition className="btn btn--gold" to="/"><span>Return to the palace</span></Link></p>
     </main>
   )
 }

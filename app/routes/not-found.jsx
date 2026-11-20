@@ -11,8 +11,8 @@ export default function NotFound() {
       <p className="eyebrow eyebrow--light">Page not found</p>
       <h1 className="notfound__title">You seem to have wandered off the palace grounds</h1>
       <p className="notfound__links">
-        <Link className="btn btn--gold" to="/"><span>Return to the palace</span></Link>
-        <Link className="btn btn--ghost" to="/accommodation"><span>See our suites</span></Link>
+        <Link viewTransition className="btn btn--gold" to="/"><span>Return to the palace</span></Link>
+        <Link viewTransition className="btn btn--ghost" to="/accommodation"><span>See our suites</span></Link>
       </p>
     </section>
   )

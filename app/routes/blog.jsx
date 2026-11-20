@@ -30,22 +30,22 @@ export default function Blog() {
         </div>
         {lead && (
           <article className="lead-post" data-reveal ref={reveal}>
-            <Link to={`/blog/${lead.slug}`} className="lead-post__img arch-clip"><Img name={lead.cover} alt="" sizes="(max-width: 900px) 90vw, 50vw" /></Link>
+            <Link viewTransition to={`/blog/${lead.slug}`} className="lead-post__img arch-clip"><Img name={lead.cover} alt="" sizes="(max-width: 900px) 90vw, 50vw" /></Link>
             <div>
               <p className="post__meta">{lead.category} · {lead.readMinutes} min read</p>
-              <h2 className="lead-post__title"><Link to={`/blog/${lead.slug}`}>{lead.title}</Link></h2>
+              <h2 className="lead-post__title"><Link viewTransition to={`/blog/${lead.slug}`}>{lead.title}</Link></h2>
               <p className="lead-post__desc">{lead.description}</p>
               <p className="post__date">{formatDate(lead.date)}</p>
-              <Link to={`/blog/${lead.slug}`} className="link-u link-u--gold">Read the story</Link>
+              <Link viewTransition to={`/blog/${lead.slug}`} className="link-u link-u--gold">Read the story</Link>
             </div>
           </article>
         )}
         <div className="posts mt-64">
           {rest.map((p, i) => (
             <article key={p.slug} className="post" data-reveal ref={reveal} style={{ '--d': `${i * 90}ms` }}>
-              <Link to={`/blog/${p.slug}`} className="post__img arch-clip"><Img name={p.cover} alt="" sizes="(max-width: 900px) 90vw, 30vw" /></Link>
+              <Link viewTransition to={`/blog/${p.slug}`} className="post__img arch-clip"><Img name={p.cover} alt="" sizes="(max-width: 900px) 90vw, 30vw" /></Link>
               <p className="post__meta">{p.category} · {p.readMinutes} min read</p>
-              <h3 className="post__title"><Link to={`/blog/${p.slug}`}>{p.title}</Link></h3>
+              <h3 className="post__title"><Link viewTransition to={`/blog/${p.slug}`}>{p.title}</Link></h3>
               <p className="post__date">{formatDate(p.date)}</p>
             </article>
           ))}

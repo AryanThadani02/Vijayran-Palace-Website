@@ -19,19 +19,19 @@ export default function Experiences() {
         <div className="features">
           <Feature img="folk" eyebrow="Activities" title="Stables, folk evenings & the open hills" hi="क्रीड़ा">
             <p>Ride from our own stables, take a camel through the Aravallis, spend an evening of Ghoomar by the bonfire, or start the day with yoga as the hills wake up.</p>
-            <p><Link className="link-u link-u--gold" to="/experiences/activities">All activities</Link></p>
+            <p><Link viewTransition className="link-u link-u--gold" to="/experiences/activities">All activities</Link></p>
           </Feature>
           <Feature img="dining-5" eyebrow="Dining" title="Swarn Mahal & dinners under the sky" hi="भोजन" flip>
             <p>Fresh produce from our organic kitchen gardens, Rajasthani classics and dishes from around the world, served in the restaurant, by the pool or beneath the stars.</p>
-            <p><Link className="link-u link-u--gold" to="/experiences/dining">Dining at the palace</Link></p>
+            <p><Link viewTransition className="link-u link-u--gold" to="/experiences/dining">Dining at the palace</Link></p>
           </Feature>
           <Feature img="amber-fort" eyebrow="Around Jaipur" title="Amer, Hawa Mahal & the Pink City" hi="जयपुर">
             <p>Amer Fort is 19 km away. Spend the morning among the forts and bazaars, and return to calm for the evening.</p>
-            <p><Link className="link-u link-u--gold" to="/experiences/attractions">Places to visit</Link></p>
+            <p><Link viewTransition className="link-u link-u--gold" to="/experiences/attractions">Places to visit</Link></p>
           </Feature>
           <Feature img="corridor" eyebrow="Gallery" title="The palace in pictures" hi="चित्रशाला" flip>
             <p>Arched corridors, painted halls, jharokhas and celebrations by night.</p>
-            <p><Link className="link-u link-u--gold" to="/gallery">Open the gallery</Link></p>
+            <p><Link viewTransition className="link-u link-u--gold" to="/gallery">Open the gallery</Link></p>
           </Feature>
         </div>
       </section>

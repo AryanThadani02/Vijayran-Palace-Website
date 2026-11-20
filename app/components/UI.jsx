@@ -6,6 +6,7 @@ import { reveal } from '../lib/motion.js'
 import { SITE } from '../content/site.js'
 import { CEREMONIES, VENUES } from '../content/weddings.js'
 import { TESTIMONIALS } from '../content/misc.js'
+import { SplitTitle } from './Signature.jsx'
 
 const DEVA = ['०', '१', '२', '३', '४', '५', '६', '७', '८', '९']
 export const deva = n => String(n).split('').map(d => DEVA[+d] ?? d).join('')
@@ -16,7 +17,7 @@ export function SectionHead({ num, eyebrow, title, children, light = false, as =
     <header className={`shead shead--${align} ${light ? 'shead--light' : ''}`} data-reveal ref={reveal}>
       {num != null && <span className="shead__num" lang="hi" aria-hidden="true">{deva(num)}</span>}
       {eyebrow && <p className={`eyebrow ${light ? 'eyebrow--light' : ''}`}>{eyebrow}</p>}
-      <H className="shead__title">{title}</H>
+      <SplitTitle as={H} className="shead__title" text={title} />
       <VineDivider />
       {children && <p className="shead__lead">{children}</p>}
     </header>
@@ -27,9 +28,9 @@ export function Breadcrumbs({ items }) {
   return (
     <nav className="crumbs" aria-label="Breadcrumb">
       <ol>
-        <li><Link to="/">Home</Link></li>
+        <li><Link viewTransition to="/">Home</Link></li>
         {items.map(([name, path], i) => (
-          <li key={path}>{i === items.length - 1 ? <span aria-current="page">{name}</span> : <Link to={path}>{name}</Link>}</li>
+          <li key={path}>{i === items.length - 1 ? <span aria-current="page">{name}</span> : <Link viewTransition to={path}>{name}</Link>}</li>
         ))}
       </ol>
     </nav>
@@ -90,7 +91,7 @@ export function CtaBand({ title = 'Your palace awaits', text = 'Book direct for 
 export function RoomCard({ room, i = 0 }) {
   return (
     <article className="room" data-reveal ref={reveal} style={{ '--d': `${(i % 3) * 90}ms` }}>
-      <Link to={`/accommodation/${room.slug}`} className="room__link">
+      <Link viewTransition to={`/accommodation/${room.slug}`} className="room__link">
         <div className="room__media">
           <div className="room__img arch-clip"><Img name={room.images[0]} alt={room.name} sizes="(max-width: 600px) 90vw, 33vw" /></div>
           <div className="room__parda arch-clip" aria-hidden="true"><span /><span /></div>
@@ -101,7 +102,7 @@ export function RoomCard({ room, i = 0 }) {
         <p className="room__meta">{room.tagline}</p>
       </Link>
       <div className="room__actions">
-        <Link to={`/accommodation/${room.slug}`} className="link-u">Explore</Link>
+        <Link viewTransition to={`/accommodation/${room.slug}`} className="link-u">Explore</Link>
         <a href={SITE.bookingUrl} target="_blank" rel="noopener" className="link-u link-u--gold">Book</a>
       </div>
     </article>

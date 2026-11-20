@@ -11,6 +11,26 @@ export const SIGNATURE = [
     text: 'Ravanhatha strings, Kalbeliya and Ghoomar dancers and a crackling bonfire, beneath a sky full of stars.' },
 ]
 
+// "Ek Shahi Din": an example day built only from experiences the palace offers.
+export const ROYAL_DAY = [
+  { time: '06:30', title: 'Sunrise yoga', img: 'estate-view', href: '/experiences/activities#yoga',
+    text: 'Guided yoga on the lawns as the first light reaches the Aravallis.' },
+  { time: '08:30', title: 'Breakfast at Swarn Mahal', img: 'dining-1', href: '/experiences/dining',
+    text: 'A slow breakfast beneath miniature artwork and fine tapestry.' },
+  { time: '10:30', title: 'Ride from the royal stables', img: 'riding', href: '/experiences/activities#horse-riding',
+    text: 'A gentle ride or a pony for the children, with horses from our own stables.' },
+  { time: '13:00', title: 'Ambar Taal', img: 'pool-infinity', href: '/experiences/activities#pool',
+    text: 'Lunch by the pool, then a long swim with the palace reflected in the water.' },
+  { time: '15:30', title: 'The forts of Amer', img: 'amber-fort', href: '/experiences/attractions',
+    text: 'Amer Fort is 19 km away. Our concierge arranges the car and the guide.' },
+  { time: '17:45', title: 'Sunset between the palaces', img: 'facade',
+    text: 'The hour our guests remember most: gold light on the saffron façades.' },
+  { time: '19:30', title: 'Ghoomar by the bonfire', img: 'folk', href: '/experiences/activities#folk-music',
+    text: 'Ravanhatha strings, Kalbeliya and Ghoomar dancers under the first stars.' },
+  { time: '21:00', title: 'Dinner under the sky', img: 'dining-5', href: '/experiences/dining',
+    text: 'A lavish spread on the lawns, or a candlelit table set just for two.' },
+]
+
 export const ACTIVITIES = [
   { id: 'horse-riding', title: 'Horse Riding & Carriage Rides', glyph: 'horse', img: 'horse',
     text: 'Our friendly, well-trained horses make every ride fun and safe for young and old alike. Choose a pony ride for the children or a romantic carriage ride for two, an experience you will remember for years.' },

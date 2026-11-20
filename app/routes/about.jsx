@@ -36,7 +36,7 @@ export default function About() {
           </Feature>
           <Feature img="estate-view" eyebrow="Setting" title="In the lap of the Aravallis" hi="अरावली" flip>
             <p>India’s oldest mountain range rises behind the palace. Gardens, lawns and courtyards open onto hill views, and the sunsets between the palace buildings are a guest favourite.</p>
-            <p><Link to="/experiences/attractions" className="link-u link-u--gold">Around Jaipur</Link></p>
+            <p><Link viewTransition to="/experiences/attractions" className="link-u link-u--gold">Around Jaipur</Link></p>
           </Feature>
           <Feature img="dining-4" eyebrow="Hospitality" title="Warmth, by name" hi="आतिथ्य">
             <p>Our guests remember our people. Reviews thank our team by name again and again, for check-ins that feel effortless, special requests remembered, and meals cooked just the way the children like them.</p>

@@ -19,7 +19,7 @@ export default function FaqPage() {
       <PageHero img="courtyard-1" hi="प्रश्न" eyebrow="FAQ" title="Questions, answered" crumbs={[['FAQ', '/faq']]} compact />
       <section className="sec sec--ivory">
         <Faq items={FAQ} />
-        <p className="center mt-48">Still curious? <Link className="link-u link-u--gold" to="/contact">Ask us anything</Link></p>
+        <p className="center mt-48">Still curious? <Link viewTransition className="link-u link-u--gold" to="/contact">Ask us anything</Link></p>
       </section>
     </>
   )

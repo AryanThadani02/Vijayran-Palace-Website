@@ -1,0 +1,33 @@
+/* Design tokens: The Vijayran Palace */
+:root {
+  /* Brand (from the live site + logo) */
+  --gold-300: #EBC86B;
+  --gold-500: #EDB904;
+  --gold-600: #B9822B;
+  --gold-700: #AD8A27;
+  --ink-950: #180A0A;
+  /* Derived neutrals */
+  --ink-800: #2A1A14;
+  --ivory-50: #FBF7EF;
+  --sand-100: #F1E6D2;
+  --text: #333333;
+  --muted: #6b5d52;
+
+  --foil: linear-gradient(100deg, #B9822B 0%, #EBC86B 38%, #EDB904 52%, #F6DFA0 60%, #B9822B 100%);
+
+  --f-display: 'Cormorant Garamond', 'Times New Roman', serif;
+  --f-eyebrow: 'Cinzel', 'Cormorant Garamond', serif;
+  --f-body: 'Lato', system-ui, sans-serif;
+  --f-deva: 'Tiro Devanagari Hindi', serif;
+
+  --ease: cubic-bezier(.22, 1, .36, 1);
+  --t-fast: 400ms;
+  --t-med: 700ms;
+  --t-slow: 900ms;
+
+  --sec-pad: clamp(72px, 11vw, 160px);
+  --gutter: clamp(20px, 5vw, 72px);
+  --max: 1280px;
+
+  --jaali: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='36' height='36'%3E%3Cpath d='M18 2C22 10 26 14 34 18 26 22 22 26 18 34 14 26 10 22 2 18 10 14 14 10 18 2Z' fill='none' stroke='%23EBC86B' stroke-width='.7'/%3E%3Ccircle cx='18' cy='18' r='2' fill='none' stroke='%23EBC86B' stroke-width='.7'/%3E%3C/svg%3E");
+}

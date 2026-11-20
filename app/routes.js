@@ -1,0 +1,25 @@
+import { index, route } from '@react-router/dev/routes'
+
+export default [
+  index('routes/home.jsx'),
+  route('about', 'routes/about.jsx'),
+  route('accommodation', 'routes/accommodation.jsx'),
+  route('accommodation/:slug', 'routes/room.jsx'),
+  route('experiences', 'routes/experiences.jsx'),
+  route('experiences/activities', 'routes/activities.jsx'),
+  route('experiences/attractions', 'routes/attractions.jsx'),
+  route('experiences/dining', 'routes/dining.jsx'),
+  route('gallery', 'routes/gallery.jsx'),
+  route('weddings', 'routes/weddings.jsx'),
+  route('weddings/pre-wedding-shoots', 'routes/pre-wedding.jsx'),
+  route('weddings/meetings-events', 'routes/meetings.jsx'),
+  route('day-outing', 'routes/day-outing.jsx'),
+  route('offers', 'routes/offers.jsx'),
+  route('blog', 'routes/blog.jsx'),
+  route('blog/:slug', 'routes/blog-post.jsx'),
+  route('contact', 'routes/contact.jsx'),
+  route('faq', 'routes/faq.jsx'),
+  route('careers', 'routes/careers.jsx'),
+  route('terms', 'routes/terms.jsx'),
+  route('*', 'routes/not-found.jsx'),
+]

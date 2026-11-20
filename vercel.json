@@ -1,0 +1,259 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "buildCommand": "npm run build",
+  "outputDirectory": "build/client",
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/about-us-luxury-resort-of-jaipur",
+      "destination": "/about",
+      "permanent": true
+    },
+    {
+      "source": "/accommodation",
+      "destination": "/accommodation",
+      "permanent": true
+    },
+    {
+      "source": "/presidential-villas",
+      "destination": "/accommodation/presidential-villas",
+      "permanent": true
+    },
+    {
+      "source": "/accommodation/villas-room-one",
+      "destination": "/accommodation/presidential-villas",
+      "permanent": true
+    },
+    {
+      "source": "/terrace-haveli-suites",
+      "destination": "/accommodation/terrace-haveli-suites",
+      "permanent": true
+    },
+    {
+      "source": "/courtyard-haveli-suites",
+      "destination": "/accommodation/courtyard-haveli-suites",
+      "permanent": true
+    },
+    {
+      "source": "/accommodation/ground-floor-courtyard-haveli-suites",
+      "destination": "/accommodation/courtyard-haveli-suites",
+      "permanent": true
+    },
+    {
+      "source": "/balcony-haveli-suites",
+      "destination": "/accommodation/balcony-haveli-suites",
+      "permanent": true
+    },
+    {
+      "source": "/jharoka-haveli-suites-2",
+      "destination": "/accommodation/jharokha-haveli-suites",
+      "permanent": true
+    },
+    {
+      "source": "/accommodation/jhoraka-haveli-suites",
+      "destination": "/accommodation/jharokha-haveli-suites",
+      "permanent": true
+    },
+    {
+      "source": "/haveli-room-twin-bed",
+      "destination": "/accommodation/haveli-room-twin",
+      "permanent": true
+    },
+    {
+      "source": "/haveli-room-twin-bed-1",
+      "destination": "/accommodation/haveli-room-twin",
+      "permanent": true
+    },
+    {
+      "source": "/accommodation/haveli-room-with-twin-bed",
+      "destination": "/accommodation/haveli-room-twin",
+      "permanent": true
+    },
+    {
+      "source": "/accommodation/haveli-room-with-king-bed",
+      "destination": "/accommodation",
+      "permanent": true
+    },
+    {
+      "source": "/accommodation/luxury-rooms-with-twin-beds",
+      "destination": "/accommodation",
+      "permanent": true
+    },
+    {
+      "source": "/accommodation/haveli-garden-rooms",
+      "destination": "/accommodation",
+      "permanent": true
+    },
+    {
+      "source": "/accommodation/haveli-rooms-with-swimming",
+      "destination": "/accommodation",
+      "permanent": true
+    },
+    {
+      "source": "/accommodation/luxury-tents-room-one",
+      "destination": "/accommodation",
+      "permanent": true
+    },
+    {
+      "source": "/yoga-spa-pool-luxury-resort-jaipur-rajasthan",
+      "destination": "/experiences/activities",
+      "permanent": true
+    },
+    {
+      "source": "/rajasthani-folk-music",
+      "destination": "/experiences/activities#folk-music",
+      "permanent": true
+    },
+    {
+      "source": "/activities-tourism-place-old",
+      "destination": "/experiences/activities",
+      "permanent": true
+    },
+    {
+      "source": "/experience",
+      "destination": "/experiences",
+      "permanent": true
+    },
+    {
+      "source": "/top-holiday-resort-in-jaipur-for-family",
+      "destination": "/experiences/attractions",
+      "permanent": true
+    },
+    {
+      "source": "/attraction-copy-2",
+      "destination": "/experiences/attractions",
+      "permanent": true
+    },
+    {
+      "source": "/best-luxury-dining-resort-in-jaipur",
+      "destination": "/experiences/dining",
+      "permanent": true
+    },
+    {
+      "source": "/heritage-wedding-resort-jaipur-rajasthan",
+      "destination": "/gallery",
+      "permanent": true
+    },
+    {
+      "source": "/best-destination-wedding-venues-in-jaipur",
+      "destination": "/weddings",
+      "permanent": true
+    },
+    {
+      "source": "/resort-near-jaipur-for-day-outing",
+      "destination": "/day-outing",
+      "permanent": true
+    },
+    {
+      "source": "/get-in-touch-resort-in-kukas-jaipur",
+      "destination": "/contact",
+      "permanent": true
+    },
+    {
+      "source": "/contact-best-jaipur-resort-packages",
+      "destination": "/contact",
+      "permanent": true
+    },
+    {
+      "source": "/reservation",
+      "destination": "/contact",
+      "permanent": true
+    },
+    {
+      "source": "/reservation-2",
+      "destination": "/contact",
+      "permanent": true
+    },
+    {
+      "source": "/faq",
+      "destination": "/faq",
+      "permanent": true
+    },
+    {
+      "source": "/career",
+      "destination": "/careers",
+      "permanent": true
+    },
+    {
+      "source": "/work-with-us",
+      "destination": "/careers",
+      "permanent": true
+    },
+    {
+      "source": "/work-with-us-2",
+      "destination": "/careers",
+      "permanent": true
+    },
+    {
+      "source": "/terms-and-conditions",
+      "destination": "/terms",
+      "permanent": true
+    },
+    {
+      "source": "/blog-places-to-visit-in-jaipur",
+      "destination": "/blog/places-to-visit-in-jaipur",
+      "permanent": true
+    },
+    {
+      "source": "/winter-summer-package",
+      "destination": "/offers",
+      "permanent": true
+    },
+    {
+      "source": "/winter-summer-package-old",
+      "destination": "/offers",
+      "permanent": true
+    },
+    {
+      "source": "/offer",
+      "destination": "/offers",
+      "permanent": true
+    },
+    {
+      "source": "/testimonial",
+      "destination": "/about",
+      "permanent": true
+    },
+    {
+      "source": "/covid19",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/groups9rooms",
+      "destination": "/weddings",
+      "permanent": true
+    },
+    {
+      "source": "/newsletter",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/home",
+      "destination": "/",
+      "permanent": true
+    }
+  ],
+  "headers": [
+    {
+      "source": "/images/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/assets/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    }
+  ]
+}
